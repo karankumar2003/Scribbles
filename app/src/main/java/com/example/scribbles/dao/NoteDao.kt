@@ -8,7 +8,8 @@ import com.example.scribbles.models.Note
 interface NoteDao {
 
     @Query("SELECT * FROM notes_table ORDER BY id ASC")
-    suspend fun getAllNotes() : LiveData<List<Note>>
+    fun getAllNotes() : LiveData<List<Note>>
+    // Do not use suspend with liveData
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(note:Note)

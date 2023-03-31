@@ -6,7 +6,7 @@ import com.example.scribbles.models.Note
 
 class NoteRepository(private val noteDao: NoteDao) {
 
-    suspend fun getAllNotes(): LiveData<List<Note>> = noteDao.getAllNotes()
+    fun getAllNotes(): LiveData<List<Note>> = noteDao.getAllNotes()
     suspend fun delete(note:Note) = noteDao.delete(note)
     suspend fun insert(note: Note) = noteDao.insert(note)
     suspend fun update(note:Note) = noteDao.updateNote(note)

@@ -14,7 +14,7 @@
         >
 
         <EditText
-            android:id="@+id/CreateTitleEditText"
+            android:id="@+id/createTitleEditText"
             android:hint = "Title"
             android:textColor="@color/white"
             android:textColorHint="#D1D1D1"
@@ -29,7 +29,7 @@
             android:gravity = "start"
             />
         <EditText
-            android:id="@+id/CreateSubTitleEditText"
+            android:id="@+id/createSubTitleEditText"
             android:hint = "Subtitle"
             android:textColor="@color/white"
             android:textColorHint="#D1D1D1"
@@ -75,7 +75,7 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/CreateNoteEditText"
+            android:id="@+id/createNoteEditText"
             android:hint = "Start Typing"
             android:textColor="@color/white"
             android:textColorHint="#D1D1D1"
@@ -91,7 +91,7 @@
 
     </LinearLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/CreateNoteFab"
+        android:id="@+id/createNoteFab"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="30dp"
         android:layout_width="wrap_content"

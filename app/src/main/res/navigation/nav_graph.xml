@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.scribbles.ui.fragments.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_createNoteFragment"
@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/createNoteFragment"
         android:name="com.example.scribbles.ui.fragments.CreateNoteFragment"
-        android:label="fragment_create_note"
+        android:label="Create Note"
         tools:layout="@layout/fragment_create_note" >
         <action
             android:id="@+id/action_createNoteFragment_to_homeFragment"
@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/editNoteFragment"
         android:name="com.example.scribbles.ui.fragments.EditNoteFragment"
-        android:label="fragment_edit_note"
+        android:label="Edit"
         tools:layout="@layout/fragment_edit_note" >
         <action
             android:id="@+id/action_editNoteFragment_to_homeFragment"

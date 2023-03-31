@@ -22,9 +22,6 @@ abstract class NotesDatabase : RoomDatabase() {
                     .also {
                         Instance = it
                     }
-
-
-
             }
         }
 
