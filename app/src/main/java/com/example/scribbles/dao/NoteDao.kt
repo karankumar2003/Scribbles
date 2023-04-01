@@ -7,7 +7,7 @@ import com.example.scribbles.models.Note
 @Dao
 interface NoteDao {
 
-    @Query("SELECT * FROM notes_table ORDER BY id ASC")
+    @Query("SELECT * FROM notes_table ORDER BY id DESC")
     fun getAllNotes() : LiveData<List<Note>>
     // Do not use suspend with liveData
 

@@ -31,6 +31,7 @@ class CreateNoteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var priority = 1
+        binding.greenPriority.setImageResource(R.drawable.baseline_done_24)
 
         binding.greenPriority.setOnClickListener{
             priority = 1

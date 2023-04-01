@@ -1,14 +1,18 @@
 package com.example.scribbles.ui.adapters
 
 import android.opengl.Visibility
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.scribbles.R
 import com.example.scribbles.databinding.RvNoteItemBinding
 import com.example.scribbles.models.Note
+import com.example.scribbles.ui.fragments.HomeFragmentDirections
+import javax.security.auth.login.LoginException
 
 class NoteAdapter(private val noteList: List<Note>) : RecyclerView.Adapter<NoteAdapter.MyViewHolder>(){
 
@@ -37,7 +41,10 @@ class NoteAdapter(private val noteList: List<Note>) : RecyclerView.Adapter<NoteA
             3->{holder.binding.priorityIV.setImageResource(R.drawable.red_circle)}
         }
 
-
+        holder.binding.root.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToEditNoteFragment(currentNote)
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
 

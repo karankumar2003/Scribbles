@@ -1,9 +1,13 @@
 package com.example.scribbles.models
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.versionedparcelable.ParcelField
+import androidx.versionedparcelable.VersionedParcelize
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 @Entity(tableName = "notes_table")
 data class Note(
 
@@ -13,4 +17,4 @@ data class Note(
     val text: String,
     val priority: Int,
     val date:String
-)
+) : Parcelable
