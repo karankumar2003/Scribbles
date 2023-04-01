@@ -5,7 +5,7 @@
     tools:context=".ui.fragments.CreateNoteFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#323333">
+    android:background="#212121">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,32 +17,18 @@
             android:id="@+id/createTitleEditText"
             android:hint = "Title"
             android:textColor="@color/white"
-            android:textColorHint="#D1D1D1"
+            android:textColorHint="#9FD1D1D1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittext"
-            android:maxLines="1"
+            android:maxLines="2"
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:padding = "10dp"
             android:gravity = "start"
             />
-        <EditText
-            android:id="@+id/createSubTitleEditText"
-            android:hint = "Subtitle"
-            android:textColor="@color/white"
-            android:textColorHint="#D1D1D1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edittext"
-            android:maxLines="1"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:padding = "10dp"
-            android:gravity = "start"
-            />
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -78,7 +64,7 @@
             android:id="@+id/createNoteEditText"
             android:hint = "Start Typing"
             android:textColor="@color/white"
-            android:textColorHint="#D1D1D1"
+            android:textColorHint="#9FD1D1D1"
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:background="@drawable/edittext"
@@ -96,13 +82,13 @@
         android:layout_marginBottom="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FF7043"
+        android:backgroundTint="#FFB114"
         android:src="@drawable/baseline_done_24"
         app:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentEnd="true"/>
 
 
 </RelativeLayout>

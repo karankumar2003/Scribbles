@@ -1,6 +1,8 @@
 package com.example.scribbles.ui.adapters
 
+import android.opengl.Visibility
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -20,10 +22,23 @@ class NoteAdapter(private val noteList: List<Note>) : RecyclerView.Adapter<NoteA
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentNote = noteList[position]
-        holder.binding.titleTV.text = currentNote.title
-        holder.binding.subtitleTV.text = currentNote.subtitle
+
+        if(currentNote.title.isNotEmpty()){
+            holder.binding.titleTV.text = currentNote.title
+        }else{
+            holder.binding.titleTV.visibility = View.GONE
+        }
         holder.binding.textTV.text = currentNote.text
         holder.binding.dateTV.text = currentNote.date
-        holder.binding.priorityIV.setImageResource(R.drawable.red_circle)
+
+        when(currentNote.priority){
+            1->{holder.binding.priorityIV.setImageResource(R.drawable.green_circle)}
+            2->{holder.binding.priorityIV.setImageResource(R.drawable.yellow_circle)}
+            3->{holder.binding.priorityIV.setImageResource(R.drawable.red_circle)}
+        }
+
+
     }
+
+
 }
