@@ -24,5 +24,5 @@ class NoteViewModel(application:Application) : AndroidViewModel(application ) {
     fun update(note:Note) = viewModelScope.launch(Dispatchers.IO) {
         repository.update(note)
     }
-    fun getAllNotes(note:Note) = repository.getAllNotes()
+    fun getAllNotes() = repository.getAllNotes()
 }
