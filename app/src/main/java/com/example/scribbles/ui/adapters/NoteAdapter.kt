@@ -14,7 +14,7 @@ import com.example.scribbles.models.Note
 import com.example.scribbles.ui.fragments.HomeFragmentDirections
 import javax.security.auth.login.LoginException
 
-class NoteAdapter(private val noteList: List<Note>) : RecyclerView.Adapter<NoteAdapter.MyViewHolder>(){
+class NoteAdapter(var noteList: List<Note>) : RecyclerView.Adapter<NoteAdapter.MyViewHolder>(){
 
     class MyViewHolder(val binding: RvNoteItemBinding) : ViewHolder(binding.root)
 

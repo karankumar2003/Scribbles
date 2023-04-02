@@ -9,6 +9,76 @@
     android:layout_height="match_parent"
     >
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:id="@+id/filterIV"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/filter_icon"
+            android:background="@drawable/grey_circle"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            />
+
+        <TextView
+            android:id="@+id/filterHigh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="High"
+            android:textColor="#FF0000"
+            android:background="@drawable/edittext"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:id="@+id/filterMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Medium"
+            android:textColor="#FFFF00"
+            android:background="@drawable/edittext"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:id="@+id/filterLow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Low"
+            android:textColor="#00FF00"
+            android:background="@drawable/edittext"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            />
+
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
@@ -16,7 +86,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/newNoteFab"

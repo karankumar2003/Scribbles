@@ -1,12 +1,14 @@
 package com.example.scribbles.ui.fragments
 
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Note
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.scribbles.R
@@ -20,6 +22,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     val viewModel : NoteViewModel by viewModels()
+    val noteAdapter = NoteAdapter(emptyList())
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,16 +40,46 @@ class HomeFragment : Fragment() {
             navController.navigate(R.id.action_homeFragment_to_createNoteFragment)
         }
 
-        binding.recyclerView.layoutManager = StaggeredGridLayoutManager(2, VERTICAL)
+        binding.recyclerView.layoutManager = StaggeredGridLayoutManager(2,VERTICAL)
+        binding.recyclerView.adapter= noteAdapter
+
+
 
 
 
         viewModel.getAllNotes().observe(viewLifecycleOwner){
-            binding.recyclerView.adapter = NoteAdapter(it)
+            noteAdapter.noteList = it
+            noteAdapter.notifyDataSetChanged()
+        }
+
+        binding.filterLow.setOnClickListener{
+            viewModel.getPriorityNotes(1).observe(viewLifecycleOwner){
+                noteAdapter.noteList = it
+                noteAdapter.notifyDataSetChanged()
+            }
+        }
+        binding.filterMedium.setOnClickListener{
+            viewModel.getPriorityNotes(2).observe(viewLifecycleOwner){
+                noteAdapter.noteList = it
+                noteAdapter.notifyDataSetChanged()
+            }
+        }
+        binding.filterHigh.setOnClickListener{
+            viewModel.getPriorityNotes(3).observe(viewLifecycleOwner){
+                noteAdapter.noteList = it
+                noteAdapter.notifyDataSetChanged()
+            }
+        }
+        binding.filterIV.setOnClickListener{
+            viewModel.getAllNotes().observe(viewLifecycleOwner){
+                noteAdapter.noteList = it
+                noteAdapter.notifyDataSetChanged()
+            }
         }
 
 
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

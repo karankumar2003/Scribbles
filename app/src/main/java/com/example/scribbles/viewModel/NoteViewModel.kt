@@ -25,4 +25,5 @@ class NoteViewModel(application:Application) : AndroidViewModel(application ) {
         repository.update(note)
     }
     fun getAllNotes() = repository.getAllNotes()
+    fun getPriorityNotes(priority:Int) = repository.getPriorityNotes(priority)
 }

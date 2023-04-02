@@ -7,13 +7,10 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.scribbles.R
-import com.example.scribbles.databinding.DeleteBottomSheetBinding
 import com.example.scribbles.databinding.FragmentEditNoteBinding
 import com.example.scribbles.models.Note
 import com.example.scribbles.viewModel.NoteViewModel

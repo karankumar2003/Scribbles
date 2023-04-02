@@ -11,6 +11,9 @@ interface NoteDao {
     fun getAllNotes() : LiveData<List<Note>>
     // Do not use suspend with liveData
 
+    @Query("select * from notes_table where priority=:priority order by time DESC")
+    fun getPriorityNotes(priority:Int) : LiveData<List<Note>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(note:Note)
 
