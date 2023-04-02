@@ -3,14 +3,17 @@ package com.example.scribbles.ui.fragments
 import android.os.Bundle
 import android.text.format.DateFormat
 import android.view.*
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.scribbles.R
+import com.example.scribbles.databinding.DeleteBottomSheetBinding
 import com.example.scribbles.databinding.FragmentEditNoteBinding
 import com.example.scribbles.models.Note
 import com.example.scribbles.viewModel.NoteViewModel
@@ -48,6 +51,19 @@ class EditNoteFragment : Fragment() {
                     R.id.delete -> {
                         val bottomSheet = BottomSheetDialog(requireContext(),R.style.BottomSheetStyle)
                         bottomSheet.setContentView(R.layout.delete_bottom_sheet)
+                        val deleteYes = bottomSheet.findViewById<TextView>(R.id.deleteYes)
+                        val deleteNo = bottomSheet.findViewById<TextView>(R.id.deleteNo)
+
+                        deleteYes?.setOnClickListener {
+                            viewModel.delete(args.note.id!!)
+                            bottomSheet.dismiss()
+                            findNavController().navigateUp()
+                        }
+                        deleteNo?.setOnClickListener{
+                            bottomSheet.dismiss()
+                        }
+
+
                         bottomSheet.show()
                         true
                     }
@@ -91,7 +107,7 @@ class EditNoteFragment : Fragment() {
 
         binding.saveChangesNoteFab.setOnClickListener {
             updateNote()
-            findNavController().navigate(R.id.action_editNoteFragment_to_homeFragment)
+            findNavController().navigateUp()
         }
 
     }

@@ -63,7 +63,7 @@ class CreateNoteFragment : Fragment() {
 
         val note = Note(title = title, text = text, priority = priority,date =date)
         viewModel.insert(note)
-            findNavController().navigate(R.id.action_createNoteFragment_to_homeFragment)
+            findNavController().navigateUp()
 
         }
     }
