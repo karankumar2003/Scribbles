@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.scribbles.R
 import com.example.scribbles.databinding.FragmentCreateNoteBinding
 import com.example.scribbles.models.Note
@@ -62,6 +63,7 @@ class CreateNoteFragment : Fragment() {
 
         val note = Note(title = title, text = text, priority = priority,date =date)
         viewModel.insert(note)
+            findNavController().navigate(R.id.action_createNoteFragment_to_homeFragment)
 
         }
     }

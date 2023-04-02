@@ -16,5 +16,6 @@ data class Note(
     val title:String,
     val text: String,
     val priority: Int,
-    val date:String
+    val date:String,
+    val time: Long = System.currentTimeMillis()
 ) : Parcelable
