@@ -5,7 +5,8 @@ The notes are stored using Room database and displayed in a staggered recyclerVi
 In addition, users can add a low, medium, or high priority to their notes, and filter notes based on their priority.   
 The app also includes a search feature, making it easy to find specific notes.
 
-This app uses LiveData and Coroutines to provide a smooth and responsive user experience.
+This app uses LiveData and Coroutines to provide a smooth and responsive user experience.  
+This app follows MVVM architecture.
 
 # Features
 • Create notes  
