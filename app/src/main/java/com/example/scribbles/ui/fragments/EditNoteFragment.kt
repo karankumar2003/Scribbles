@@ -59,8 +59,6 @@ class EditNoteFragment : Fragment() {
                         deleteNo?.setOnClickListener{
                             bottomSheet.dismiss()
                         }
-
-
                         bottomSheet.show()
                         true
                     }

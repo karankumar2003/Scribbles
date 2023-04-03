@@ -17,6 +17,7 @@
             android:background="#212121"/>
 
         <TextView
+            android:id="@+id/warningTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Are you sure you want to delete\n this note?"
